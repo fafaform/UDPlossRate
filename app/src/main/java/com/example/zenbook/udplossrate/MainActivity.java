@@ -49,14 +49,20 @@ public class MainActivity extends Activity {
                             receive = new Thread(serverAsync);
                             receive.start();
 
-
-                            for (int i = 0; i < 1001; i++) {
+                            int number = 6000;
+                            for (int i = 0; i < number+1; i++) {
 //                                try {
 //                                    DatagramSocket clientSocket = new DatagramSocket();
 //                                    ServerAsync serverAsync = new ServerAsync(clientSocket);
 //                                    receive = new Thread(serverAsync);
 //                                    receive.start();
-                                    ClientAsync clientAsync = new ClientAsync(i + 1, clientSocket);
+                                ClientAsync clientAsync;
+                                if(i == number) {
+                                     clientAsync = new ClientAsync(1001.00, clientSocket);
+                                }else{
+                                     clientAsync = new ClientAsync(Math.sin(i * 0.1 * Math.PI / 2), clientSocket);
+
+                                }
                                     send = new Thread(clientAsync);
                                     send.start();
 
