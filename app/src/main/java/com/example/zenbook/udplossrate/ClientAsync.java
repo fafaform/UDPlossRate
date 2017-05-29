@@ -8,22 +8,24 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class ClientAsync implements Runnable {
-    private double sequence;
+    private String sequence;
     private DatagramSocket clientSocket;
 
-    public ClientAsync(double sequence, DatagramSocket datagramSocket){
+    public ClientAsync(String sequence, DatagramSocket datagramSocket){
         this.sequence = sequence;
+        System.out.println(sequence);
         this.clientSocket = datagramSocket;
     }
 
     @Override
     public void run() {
         try {
-//            InetAddress IPAddress = InetAddress.getByName("172.31.196.204");
-            InetAddress IPAddress = InetAddress.getByName("192.168.1.35");
+//            InetAddress IPAddress = InetAddress.getByName("172.31.193.231");
+//            InetAddress IPAddress = InetAddress.getByName("192.168.1.14");
+            InetAddress IPAddress = InetAddress.getByName("172.31.16.5");
 //            InetAddress IPAddress = InetAddress.getByName("nbtc.ee.psu.ac.th");
             String sentence = sequence + "";
-            if(sequence == 1001.00) sentence = "end";
+//            if(sequence.equals("end")) sentence = "end";
             byte[] sendData = sentence.getBytes();
 
 //            ServerAsync serverAsync = new ServerAsync(clientSocket);
