@@ -21,9 +21,9 @@ public class ClientAsync implements Runnable {
     public void run() {
         try {
 //            InetAddress IPAddress = InetAddress.getByName("172.31.193.231");
-//            InetAddress IPAddress = InetAddress.getByName("192.168.1.14");
-            InetAddress IPAddress = InetAddress.getByName("172.31.16.5");
-//            InetAddress IPAddress = InetAddress.getByName("nbtc.ee.psu.ac.th");
+//            InetAddress IPAddress = InetAddress.getByName("192.168.1.40");
+//            InetAddress IPAddress = InetAddress.getByName("172.31.16.5");
+            InetAddress IPAddress = InetAddress.getByName("nbtc.ee.psu.ac.th");
             String sentence = sequence + "";
 //            if(sequence.equals("end")) sentence = "end";
             byte[] sendData = sentence.getBytes();
